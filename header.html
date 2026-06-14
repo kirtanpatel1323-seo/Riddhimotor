@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Header</title>
+  
+  <!-- Internal CSS -->
+  <style>
+    :root {
+      --electric-blue: #00c6ff;
+      --vivid-purple: #6a00ff;
+      --hot-pink: #ff007f;
+    }
+
+    /* Header Styles */
+    header {
+      background: linear-gradient(90deg, var(--electric-blue), var(--vivid-purple));
+      padding: 1rem 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 75px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      background-color: var(--hot-pink);
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+
+<body style="margin: 0; padding-top: 100px;"> <!-- Added padding-top to prevent content being hidden behind fixed header -->
+
+  <!-- Header Section -->
+  <header>
+    <div class="container">
+      <nav>
+        <!-- Logo -->
+        <a href="index.html" class="logo">
+          <img src="images/Logo.jpeg" alt="Logo" />
+        </a>
+
+        <!-- Navigation Links -->
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="About.html">About</a>
+          <a href="Services.html">Services</a>
+          <a href="Packages.html">Packages</a>
+          <a href="Contact.html">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+</body>
+</html>

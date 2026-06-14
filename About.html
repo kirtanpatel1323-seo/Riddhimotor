@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Riddhi Motor Training School</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* CSS Variables */
+        :root {
+            --electric-blue: #3b82f6;
+            --neon-green: #10b981;
+            --dark-blue: #1e40af;
+            --off-white: #f8fafc;
+            --light-gray: #e2e8f0;
+            --medium-gray: #94a3b8;
+            --dark-gray: #1e293b;
+            --gradient-blue-green: linear-gradient(135deg, var(--electric-blue) 0%, var(--neon-green) 100%);
+            --gradient-dark-blue: linear-gradient(135deg, var(--dark-blue) 0%, var(--electric-blue) 100%);
+        }
+
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--dark-gray);
+            background-color: var(--off-white);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Button Styles */
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--gradient-blue-green);
+            color: white;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(59, 130, 246, 0.2);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 70vh;
+            min-height: 500px;
+            background: var(--gradient-dark-blue);
+            color: white;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('images/About.jpeg') no-repeat center center/cover;
+            opacity: 0.2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+
+        /* About Section */
+        .about-section {
+            background-color: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            background: var(--gradient-blue-green);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .section-title p {
+            color: var(--medium-gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-image {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--electric-blue);
+        }
+
+        .about-content p {
+            margin-bottom: 20px;
+            color: var(--dark-gray);
+        }
+
+        /* Mission & Vision */
+        .mission-vision {
+            background-color: var(--off-white);
+        }
+
+        .mv-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .mv-card {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .mv-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .mv-card i {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--electric-blue);
+        }
+
+        .mv-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        /* Core Values */
+        .core-values {
+            background: white;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .value-card {
+            background: var(--off-white);
+            border-radius: 12px;
+            padding: 30px;
+            display: flex;
+            align-items: flex-start;
+            transition: all 0.3s ease;
+        }
+
+        .value-card:hover {
+            background: var(--gradient-blue-green);
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        .value-card:hover i,
+        .value-card:hover h4 {
+            color: white;
+        }
+
+        .value-card i {
+            font-size: 1.8rem;
+            margin-right: 20px;
+            color: var(--electric-blue);
+            transition: all 0.3s ease;
+        }
+
+        .value-content h4 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--dark-gray);
+            transition: all 0.3s ease;
+        }
+
+        /* Owner Profile */
+        .owner-profile {
+            background: var(--gradient-dark-blue);
+            color: white;
+        }
+
+        .owner-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .owner-image {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+        }
+
+        .owner-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .owner-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .owner-content h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--light-gray);
+        }
+
+        .owner-content p {
+            margin-bottom: 20px;
+        }
+
+        .license-number {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 8px 15px;
+            border-radius: 50px;
+            margin-top: 15px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: var(--off-white);
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonial-card .quote {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: var(--dark-gray);
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .author-image {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+        }
+
+        .author-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+
+        .author-info p {
+            font-size: 0.9rem;
+            color: var(--medium-gray);
+        }
+
+        /* Contact CTA */
+        .contact-cta {
+            text-align: center;
+            background: var(--gradient-blue-green);
+            color: white;
+        }
+
+        .contact-cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-cta p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .contact-info {
+            margin-top: 40px;
+        }
+
+        .contact-info p {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contact-info i {
+            margin-right: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-gray);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .footer-logo {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: white;
+            text-decoration: none;
+            margin-bottom: 20px;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            color: var(--light-gray);
+            text-decoration: none;
+            margin: 0 15px 10px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .social-links {
+            margin-bottom: 20px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            margin: 0 10px;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--electric-blue);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .mv-card, .value-card, .testimonial-card {
+            animation: fadeIn 0.6s ease forwards;
+            opacity: 0;
+        }
+
+        .mv-card:nth-child(1) { animation-delay: 0.1s; }
+        .mv-card:nth-child(2) { animation-delay: 0.3s; }
+        .value-card:nth-child(1) { animation-delay: 0.1s; }
+        .value-card:nth-child(2) { animation-delay: 0.2s; }
+        .value-card:nth-child(3) { animation-delay: 0.3s; }
+        .value-card:nth-child(4) { animation-delay: 0.4s; }
+        .value-card:nth-child(5) { animation-delay: 0.5s; }
+        .value-card:nth-child(6) { animation-delay: 0.6s; }
+        .value-card:nth-child(7) { animation-delay: 0.7s; }
+        .testimonial-card:nth-child(1) { animation-delay: 0.1s; }
+        .testimonial-card:nth-child(2) { animation-delay: 0.3s; }
+        .testimonial-card:nth-child(3) { animation-delay: 0.5s; }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .about-grid, .owner-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .owner-image {
+                max-width: 400px;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .mv-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .contact-cta h2 {
+                font-size: 2rem;
+            }
+
+            .owner-content h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+    <!-- Header -->
+    <div id="header-placeholder"></div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>About Riddhi Motor Training School</h1>
+                <p>Vadodara's premier driving education institute committed to creating confident, skilled, and responsible drivers since 2014.</p>
+                <a href="#contact" class="btn btn-primary">Join Us Today</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="images\About hero.jpeg" alt="Riddhi Motor Training School building">
+                </div>
+                <div class="about-content">
+                    <h3>Our Story</h3>
+                    <p>Founded in 2014, Riddhi Motor Training School has established itself as one of Vadodara's most trusted driving education providers. Located conveniently in Maneja, we've trained thousands of students to become confident and responsible drivers.</p>
+                    <p>Our school is fully licensed by the Regional Transport Office (RTO) and adheres to all government regulations for driver training. We take pride in our modern training methods, experienced instructors, and high success rate.</p>
+                    <p>At Riddhi, we don't just teach you how to drive - we teach you how to drive safely and confidently in all road conditions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision Section -->
+    <section class="mission-vision">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Mission & Vision</h2>
+                <p>Guiding principles that drive our commitment to excellence in driver education</p>
+            </div>
+            
+            <div class="mv-grid">
+                <div class="mv-card">
+                    <i class="fas fa-bullseye"></i>
+                    <h3>Our Mission</h3>
+                    <p>To provide comprehensive, high-quality driver education that emphasizes safety, responsibility, and confidence on the road. We aim to transform novice drivers into skilled professionals through personalized training and modern teaching methodologies.</p>
+                </div>
+                
+                <div class="mv-card">
+                    <i class="fas fa-eye"></i>
+                    <h3>Our Vision</h3>
+                    <p>To become Gujarat's most trusted driving school by setting benchmarks in driver education, fostering a culture of road safety, and continuously innovating our training programs to meet evolving driving challenges and regulations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Values Section -->
+    <section class="core-values">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Core Values</h2>
+                <p>The fundamental beliefs that guide our operations and interactions</p>
+            </div>
+            
+            <div class="values-grid">
+                <div class="value-card">
+                    <i class="fas fa-smile"></i>
+                    <div class="value-content">
+                        <h4>Complete Client Satisfaction</h4>
+                        <p>Your satisfaction is our top priority. We go above and beyond to ensure you're happy with your training experience.</p>
+                    </div>
+                </div>
+                
+                <div class="value-card">
+                    <i class="fas fa-handshake"></i>
+                    <div class="value-content">
+                        <h4>Ethical Business Policies</h4>
+                        <p>We conduct all business with integrity, honesty, and transparency, building trust with every student.</p>
+                    </div>
+                </div>
+                
+                <div class="value-card">
+                    <i class="fas fa-clipboard-check"></i>
+                    <div class="value-content">
+                        <h4>Transparent Dealings</h4>
+                        <p>No hidden fees or surprises. We're clear about our pricing, policies, and processes from day one.</p>
+                    </div>
+                </div>
+                
+                <div class="value-card">
+                    <i class="fas fa-network-wired"></i>
+                    <div class="value-content">
+                        <h4>Wide Connectivity</h4>
+                        <p>Strong relationships with RTOs and transport authorities ensure smooth license processing for our students.</p>
+                    </div>
+                </div>
+                
+                <div class="value-card">
+                    <i class="fas fa-comments"></i>
+                    <div class="value-content">
+                        <h4>Active Customer Engagement</h4>
+                        <p>We maintain open communication channels and welcome feedback to continuously improve our services.</p>
+                    </div>
+                </div>
+                
+                <div class="value-card">
+                    <i class="fas fa-lightbulb"></i>
+                    <div class="value-content">
+                        <h4>Solution-Oriented Approach</h4>
+                        <p>We focus on finding solutions tailored to each student's unique needs and learning pace.</p>
+                    </div>
+                </div>
+                
+                <div class="value-card">
+                    <i class="fas fa-star"></i>
+                    <div class="value-content">
+                        <h4>Positive Client Experiences</h4>
+                        <p>From first contact to license acquisition, we ensure every interaction is positive and productive.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Owner Profile Section -->
+    <section class="owner-profile">
+        <div class="container">
+            <div class="owner-grid">
+                <div class="owner-image">
+                    <img src="images\Founder.jpeg" alt="Mr. Viralsinh Parmar">
+                </div>
+                <div class="owner-content">
+                    <h2>Mr. Viralsinh Parmar</h2>
+                    <h3>Founder & Chief Instructor</h3>
+                    <p>With over a decade of experience in driver education, Mr. Viralsinh Parmar established Riddhi Motor Training School with a vision to revolutionize driving instruction in Vadodara. His passion for road safety and commitment to quality education has shaped our school's reputation.</p>
+                    <p>A licensed instructor since 2014, Mr. Parmar personally oversees the training curriculum and instructor development program. His hands-on approach ensures every student receives the highest standard of instruction.</p>
+                    <p>"Driving is not just a skill, it's a responsibility. At Riddhi, we don't just create drivers - we create responsible road citizens."</p>
+                    <div class="license-number">
+                        Licence No. GJ06/VD / 2014/155
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>What Our Students Say</h2>
+                <p>Hear from those who've experienced our training firsthand</p>
+            </div>
+            
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="quote">
+                        "Riddhi Motor Training School made learning to drive so easy! The instructors are patient and knowledgeable. I passed my driving test on the first attempt thanks to their excellent training."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="student1.jpg" alt="Priya Shah">
+                        </div>
+                        <div class="author-info">
+                            <h4>Priya Shah</h4>
+                            <p>Student</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="quote">
+                        "Mr. Parmar and his team are professional and caring. They customized the lessons to my pace and made sure I was completely confident before my test. Highly recommend this school!"
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="student2.jpg" alt="Rahul Patel">
+                        </div>
+                        <div class="author-info">
+                            <h4>Rahul Patel</h4>
+                            <p>Student</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="quote">
+                        "The entire license process was handled smoothly by the Riddhi team. From paperwork to test scheduling, they took care of everything. Great service and excellent instructors!"
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="student3.jpg" alt="Neha Desai">
+                        </div>
+                        <div class="author-info">
+                            <h4>Neha Desai</h4>
+                            <p>Student</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA Section -->
+    <section class="contact-cta" id="contact">
+        <div class="container">
+            <h2>Ready to Start Your Driving Journey?</h2>
+            <p>Join hundreds of satisfied students who've learned to drive with confidence through our programs.</p>
+            <a href="tel:+919974101224" class="btn btn-primary">Join Us Today</a>
+            
+            <div class="contact-info">
+                <p><i class="fas fa-phone-alt"></i> +91-9974101224, +91-9825543255</p>
+                <p><i class="fas fa-envelope"></i> rmts1224@gmail.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> First Floor 104, Divine Avenue, Opp. Voltamp Company, Near Shanti Niketan School, Maneja, Vadodara.</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+    fetch('header.html')
+      .then(response => {
+        if (!response.ok) throw new Error('Network response was not ok');
+        return response.text();
+      })
+      .then(data => {
+        document.getElementById('header-placeholder').innerHTML = data;
+      })
+      .catch(error => {
+        console.error('Error loading header:', error);
+      });
+  </script>
+
+  <div id="footer-container"></div>
+
+  <script>
+  fetch("footer.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("footer-container").innerHTML = data;
+    });
+</script>
+
+</body>
+</html>

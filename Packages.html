@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driving Packages | Riddhi Motor Training School</title>
+    <style>
+        /* CSS Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        :root {
+            --primary: #2563eb;
+            --secondary: #10b981;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #94a3b8;
+            --accent: #f59e0b;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        /* Utility Classes */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+            border: 2px solid var(--primary);
+        }
+
+        .btn-primary:hover {
+            background-color: transparent;
+            color: var(--primary);
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary);
+            color: white;
+            border: 2px solid var(--secondary);
+        }
+
+        .btn-secondary:hover {
+            background-color: transparent;
+            color: var(--secondary);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-align: center;
+            color: var(--dark);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--gray);
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/About.jpeg') no-repeat center center/cover;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            animation: fadeIn 1s ease-in;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Packages Section */
+        .packages {
+            padding: 5rem 0;
+        }
+
+        .package-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .package-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .package-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .package-header {
+            padding: 2rem;
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+        }
+
+        .package-popular {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--accent);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .package-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .package-price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .package-duration {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .package-features {
+            padding: 2rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .feature-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .feature-icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 1rem;
+            color: var(--primary);
+        }
+
+        .package-footer {
+            padding: 0 2rem 2rem;
+            text-align: center;
+        }
+
+        /* Why Choose Us Section */
+        .why-us {
+            padding: 5rem 0;
+            background-color: #f1f5f9;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon-large {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .feature-desc {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 5rem 0;
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+        }
+
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .package-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .package-price {
+                font-size: 2rem;
+            }
+        }
+    </style>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div id="header-placeholder"></div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content fade-in">
+            <h1>Choose the Right Driving Package for You</h1>
+            <p>From beginners to experienced drivers, we have a plan for everyone.</p>
+            <a href="#packages" class="btn btn-primary">View Packages</a>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section id="packages" class="packages container">
+        <h2 class="section-title">Our Driving Packages</h2>
+        <p class="section-subtitle">Select the perfect package that matches your learning needs and budget</p>
+
+        <div class="package-grid">
+            <!-- Basic Package -->
+            <div class="package-card">
+                <div class="package-header">
+                    <h3 class="package-name">Learner Standard Course</h3>
+                    <div class="package-price">₹4,000</div>
+                    <div class="package-duration">21 Days (5 km per day) — Total 105 km</div>
+                </div>
+                <div class="package-features">
+                    <div class="feature-item">
+                        <i class="fas fa-clock feature-icon"></i>
+                        <span>1-hour sessions</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-car feature-icon"></i>
+                        <span>Manual car only</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-user-graduate feature-icon"></i>
+                        <span>Certified instructor</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-times-circle feature-icon"></i>
+                        <span>license assistance</span>
+                    </div>
+                </div>
+                <div class="package-footer">
+                    <a href="Contact.html" class="btn btn-primary">Enroll Now</a>
+                </div>
+            </div>
+
+            <!-- Standard Package (Popular) -->
+            <div class="package-card">
+                <div class="package-popular">Most Popular</div>
+                <div class="package-header">
+                    <h3 class="package-name"> Learner Extended Course</h3>
+                    <div class="package-price">₹6,000</div>
+                    <div class="package-duration">	Total 200 km</div>
+                </div>
+                <div class="package-features">
+                    <div class="feature-item">
+                        <i class="fas fa-clock feature-icon"></i>
+                        <span>1-hour sessions</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-car feature-icon"></i>
+                        <span>Swift Dzire</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-home feature-icon"></i>
+                        <span>Highway Driving</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-id-card feature-icon"></i>
+                        <span>Basic license help</span>
+                    </div>
+                </div>
+                <div class="package-footer">
+                    <a href="Contact.html" class="btn btn-primary">Enroll Now</a>
+                </div>
+            </div>
+
+            <!-- Premium Package -->
+            <div class="package-card">
+                <div class="package-header">
+                    <h3 class="package-name">After License Practice Support</h3>
+                    <div class="package-price">	₹250 per class</div>
+                    <div class="package-duration">Class duration 1-hour</div>
+                </div>
+                <div class="package-features">
+                    <div class="feature-item">
+                        <i class="fas fa-clock feature-icon"></i>
+                        <span>1-hour sessions</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-car-side feature-icon"></i>
+                        <span>	Practice driving with your own car</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-id-card feature-icon"></i>
+                        <span>Full license support</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-star feature-icon"></i>
+                        <span>Priority bookings</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-certificate feature-icon"></i>
+                        <span>Completion certificate</span>
+                    </div>
+                </div>
+                <div class="package-footer">
+                    <a href="Contact.html" class="btn btn-primary">Enroll Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-us">
+        <div class="container">
+            <h2 class="section-title">Why Choose Riddhi Motor Training School</h2>
+            <p class="section-subtitle">We're committed to providing the best driving education experience</p>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-user-tie feature-icon-large"></i>
+                    <h3 class="feature-title">Certified Instructors</h3>
+                    <p class="feature-desc">Our instructors are government-certified with years of experience in teaching safe driving techniques.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-car-alt feature-icon-large"></i>
+                    <h3 class="feature-title">Modern Fleet</h3>
+                    <p class="feature-desc">Learn on well-maintained, modern vehicles equipped with dual controls for safety.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-medal feature-icon-large"></i>
+                    <h3 class="feature-title">Proven Success</h3>
+                    <p class="feature-desc">Trusted by hundreds of students with a 98% first-time pass rate on driving tests.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-calendar-alt feature-icon-large"></i>
+                    <h3 class="feature-title">Flexible Scheduling</h3>
+                    <p class="feature-desc">Morning, afternoon, and evening slots available to fit your busy schedule.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Start Your Driving Journey?</h2>
+            <p>Join hundreds of satisfied students who learned to drive confidently with Riddhi Motor Training School.</p>
+            <a href="Contact.html" class="btn btn-secondary">Book Your Driving Package Now</a>
+        </div>
+    </section>
+
+    <script>
+    fetch('header.html')
+      .then(response => {
+        if (!response.ok) throw new Error('Network response was not ok');
+        return response.text();
+      })
+      .then(data => {
+        document.getElementById('header-placeholder').innerHTML = data;
+      })
+      .catch(error => {
+        console.error('Error loading header:', error);
+      });
+  </script>
+
+    <script>
+        // Simple animation trigger for elements when they come into view
+        document.addEventListener('DOMContentLoaded', function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.package-card, .feature-card').forEach(card => {
+                observer.observe(card);
+            });
+        });
+    </script>
+
+<div id="footer-container"></div>
+
+<script>
+  fetch("footer.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("footer-container").innerHTML = data;
+    });
+</script>
+
+</body>
+</html>

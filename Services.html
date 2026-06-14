@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | Drive with Confidence</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --electric-blue: #0066ff;
+            --neon-green: #00ff88;
+            --off-white: #f8f9fa;
+            --dark-gray: #2d3748;
+            --light-gray: #e2e8f0;
+            --gradient-blue-green: linear-gradient(135deg, var(--electric-blue) 0%, var(--neon-green) 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--dark-gray);
+            background-color: var(--off-white);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 70vh;
+            background: var(--gradient-blue-green);
+            color: white;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1494972308805-463bc619d34e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            opacity: 0.2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 600px;
+        }
+
+        .hero h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        /* Services Section */
+         .services {
+            padding: 80px 20px;
+            background-color: white;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark-gray);
+            margin-bottom: 15px;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-icon {
+            padding: 30px;
+            background: linear-gradient(135deg, var(--light-gray) 0%, #e0e5ec 100%);
+            text-align: center;
+        }
+
+        .service-icon svg {
+            width: 60px;
+            height: 60px;
+            stroke: var(--electric-blue);
+        }
+
+        .service-content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-content h3 {
+            color: var(--electric-blue);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .service-content p {
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .service-features {
+            margin-top: auto;
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .service-features li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .service-features li:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 10px;
+            height: 10px;
+            background-color: var(--neon-green);
+            border-radius: 50%;
+        }
+
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+
+
+        /* CTA Section */
+        .cta {
+            padding: 80px 0;
+            background: var(--gradient-blue-green);
+            color: white;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background: white;
+            color: var(--electric-blue);
+            border-radius: 50px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-gradient {
+            background: var(--gradient-blue-green);
+            color: white;
+            box-shadow: 0 4px 15px rgba(0, 102, 255, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-gray);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        footer p {
+            opacity: 0.8;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .service-card {
+            animation: fadeIn 0.6s ease forwards;
+            opacity: 0;
+        }
+
+        .service-card:nth-child(1) { animation-delay: 0.1s; }
+        .service-card:nth-child(2) { animation-delay: 0.3s; }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .cta h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .logo {
+                font-size: 1.2rem;
+            }
+            
+            .logo span {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div id="header-placeholder"></div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Our Services to Drive You Forward</h1>
+                <p>Professional driving instruction and license assistance to help you navigate the road with confidence.</p>
+                <a href="#services" class="btn">Explore Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Comprehensive Driving Solutions</h2>
+                <p>We offer complete training programs tailored to your needs, whether you're a beginner or need license assistance.</p>
+            </div>
+            
+                    <div class="services-grid">
+            <!-- RTO Work Card -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                </div>
+                <div class="service-content">
+                    <h3>RTO Work</h3>
+                    <p>Complete Regional Transport Office services for all your vehicle documentation needs.</p>
+                    <ul class="service-features">
+                        <li>Vehicle registration & transfer</li>
+                        <li>Driving license renewal</li>
+                        <li>Number plate applications</li>
+                        <li>Ownership transfer services</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Mediclaim Assistance Card -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                    </svg>
+                </div>
+                <div class="service-content">
+                    <h3>Mediclaim Assistance</h3>
+                    <p>Expert guidance for all health insurance needs with comprehensive policy support.</p>
+                    <ul class="service-features">
+                        <li>Health insurance policy selection</li>
+                        <li>Claim processing assistance</li>
+                        <li>Policy renewal & portability</li>
+                        <li>Cashless hospitalization support</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Vehicle Insurance Card -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </div>
+                <div class="service-content">
+                    <h3>Vehicle Insurance</h3>
+                    <p>Complete motor insurance solutions with competitive premiums and claim support.</p>
+                    <ul class="service-features">
+                        <li>New policy & renewal services</li>
+                        <li>Claim assistance coordination</li>
+                        <li>Zero depreciation covers</li>
+                        <li>Multi-vehicle discount options</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- CSC Center Services Card -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                    </svg>
+                </div>
+                <div class="service-content">
+                    <h3>CSC Center Services</h3>
+                    <p>Access to hundreds of government and utility services through our Common Service Center.</p>
+                    <ul class="service-features">
+                        <li>Aadhaar enrollment & updates</li>
+                        <li>Bill payments & utility services</li>
+                        <li>Government scheme applications</li>
+                        <li>PAN card & document services</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Driving Lessons Card -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 13l4 4L19 7" />
+                    </svg>
+                </div>
+                <div class="service-content">
+                    <h3>Driving Lessons</h3>
+                    <p>Professional driving instruction for all skill levels with certified trainers.</p>
+                    <ul class="service-features">
+                        <li>Personalized one-on-one instruction</li>
+                        <li>Modern training vehicles</li>
+                        <li>Flexible scheduling options</li>
+                        <li>Road test preparation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Start Your Driving Journey?</h2>
+            <p>Join hundreds of satisfied students who've learned to drive with confidence through our programs.</p>
+            <a href="Contact.html" class="btn btn-gradient">Start Your Journey Today!</a>
+        </div>
+    </section>
+
+    <script>
+    fetch('header.html')
+      .then(response => {
+        if (!response.ok) throw new Error('Network response was not ok');
+        return response.text();
+      })
+      .then(data => {
+        document.getElementById('header-placeholder').innerHTML = data;
+      })
+      .catch(error => {
+        console.error('Error loading header:', error);
+      });
+  </script>
+  
+    <!-- Footer -->
+    <div id="footer-container"></div>
+
+    <script>
+  fetch("footer.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("footer-container").innerHTML = data;
+    });
+</script>
+
+</body>
+</html>
+
+
+
+

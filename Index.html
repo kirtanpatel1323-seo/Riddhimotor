@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RiddiMotor Training Shcool  - Learn to Drive with Confidence!</title>
+    <style>
+        /* Extreme Vibrant Color Palette */
+        :root {
+            --electric-blue: #00f0ff;
+            --hot-pink: #ff00aa;
+            --neon-green: #00ff88;
+            --vivid-purple: #aa00ff;
+            --sunshine-yellow: #ffee00;
+            --deep-black: #111111;
+        }
+        
+        /* Base Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--deep-black);
+            line-height: 1.6;
+            background-color: #f0f0f0;
+        }
+        
+        h1, h2, h3 {
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 75vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/Hero.jpeg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            margin-top: 0;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: var(--sunshine-yellow);
+            text-shadow: 3px 3px 0 var(--hot-pink);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--hot-pink);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            border: 3px solid var(--electric-blue);
+            box-shadow: 0 0 15px var(--electric-blue);
+        }
+        
+        .cta-button:hover {
+            background-color: var(--electric-blue);
+            color: var(--deep-black);
+            transform: scale(1.05);
+            box-shadow: 0 0 25px var(--electric-blue);
+        }
+        
+        /* Sections Common Styles */
+        section {
+            padding: 5rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+            color: var(--vivid-purple);
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 5px;
+            background: linear-gradient(90deg, var(--electric-blue), var(--hot-pink));
+            margin: 1rem auto;
+        }
+        
+        /* Timing Section */
+        .timing-section {
+            background-color: var(--sunshine-yellow);
+        }
+        
+        .timing-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        
+        .timing-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            flex: 1;
+            min-width: 250px;
+            text-align: center;
+            border-top: 5px solid var(--hot-pink);
+        }
+        
+        .timing-card h3 {
+            color: var(--vivid-purple);
+            font-size: 1.5rem;
+        }
+        
+        .timing-card p {
+            font-size: 1.1rem;
+        }
+        
+        .highlight {
+            font-weight: 700;
+            color: var(--hot-pink);
+        }
+        
+        /* Packages Section */
+        .packages-section {
+            background-color: var(--vivid-purple);
+            color: white;
+        }
+        
+        .packages-container {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .package-card {
+            background-color: white;
+            color: var(--deep-black);
+            border-radius: 10px;
+            overflow: hidden;
+            width: 300px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .package-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 40px rgba(0, 0, 0, 0.4);
+        }
+        
+        .package-header {
+            background: linear-gradient(90deg, var(--electric-blue), var(--neon-green));
+            color: var(--deep-black);
+            padding: 1.5rem;
+            text-align: center;
+        }
+        
+        .package-header h3 {
+            margin: 0;
+            font-size: 1.8rem;
+        }
+        
+        .package-price {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin: 1rem 0;
+            color: var(--deep-black);
+        }
+        
+        .package-features {
+            padding: 2rem;
+        }
+        
+        .package-features ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .package-features li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .package-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .package-button {
+            display: block;
+            text-align: center;
+            background-color: var(--hot-pink);
+            color: white;
+            padding: 1rem;
+            text-decoration: none;
+            font-weight: 700;
+            margin: 1rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .package-button:hover {
+            background-color: var(--electric-blue);
+            color: var(--deep-black);
+        }
+        
+        /* Reviews Section */
+        .reviews-section {
+            background-color: var(--neon-green);
+        }
+        
+        .reviews-container {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .review-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            width: 300px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        .review-card::before {
+            content: '"';
+            font-size: 5rem;
+            color: var(--electric-blue);
+            opacity: 0.2;
+            position: absolute;
+            top: 10px;
+            left: 20px;
+        }
+        
+        .stars {
+            color: var(--sunshine-yellow);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+        }
+        
+        .review-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+        
+        .review-author {
+            font-weight: 700;
+            color: var(--vivid-purple);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--deep-black);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-links a {
+            color: var(--electric-blue);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--hot-pink);
+        }
+        
+        .social-icons {
+            margin: 1rem 0;
+        }
+        
+        .social-icons a {
+            color: white;
+            margin: 0 10px;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            color: var(--neon-green);
+        }
+        
+        .copyright {
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .timing-container, .packages-container, .reviews-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .package-card, .review-card {
+                width: 100%;
+                max-width: 350px;
+            }
+        }
+    </style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+
+    <div id="header-placeholder"></div>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Learn to Drive with Confidence!</h1>
+            <p>Master the roads with our expert instructors and state-of-the-art training vehicles. Get your license faster with our proven teaching methods.</p>
+            <a href="Packages.html" class="cta-button">Join Now</a>
+        </div>
+    </section>
+    
+    <!-- Timing Section -->
+    <section class="timing-section">
+        <div class="container">
+            <h2 class="section-title">Our Training Hours</h2>
+            <div class="timing-container">
+                <div class="timing-card">
+                    <h3>Morning Sessions</h3>
+                    <p><span class="highlight">6:00 AM - 9:00 AM</span></p>
+                    <p>Perfect for early risers and those with daytime commitments</p>
+                </div>
+                <div class="timing-card">
+                    <h3>Evening Sessions</h3>
+                    <p><span class="highlight">5:00 PM - 8:00 PM</span></p>
+                    <p>Ideal for students and working professionals</p>
+                </div>
+                <div class="timing-card">
+                    <h3>Weekend Special</h3>
+                    <p><span class="highlight">8:00 AM - 4:00 PM</span></p>
+                    <p>Intensive training for those who want to learn quickly</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Packages Section -->
+    <section class="packages-section">
+        <div class="container">
+            <h2 class="section-title">Our Training Packages</h2>
+            <div class="packages-container">
+                <div class="package-card">
+                    <div class="package-header">
+                        <h3>Learner Standard Course</h3>
+                        <div class="package-price">₹4000</div>
+                        <p>Perfect for first-time drivers</p>
+                    </div>
+                    <div class="package-features">
+                        <ul>
+                            <li>21 Days (5 km per day) — Total 105 km</li>
+                            <li>Basic traffic rules & regulations</li>
+                            <li>Parking techniques</li>
+                            <li>2 mock driving tests</li>
+                        </ul>
+                        <a href="Contact.html" class="package-button">Enroll Now</a>
+                    </div>
+                </div>
+                
+                <div class="package-card">
+                    <div class="package-header">
+                        <h3>Learner Extended Course</h3>
+                        <div class="package-price">₹6000</div>
+                        <p>For those with some experience</p>
+                    </div>
+                    <div class="package-features">
+                        <ul>
+                            <li>Total 200 km</li>
+                            <li>Highway driving techniques</li>x
+                            <li>Defensive driving skills</li>
+                            <li>5 mock driving tests</li>
+                        </ul>
+                        <a href="Contact.html" class="package-button">Enroll Now</a>
+                    </div>
+                </div>
+                
+                <div class="package-card">
+                    <div class="package-header">
+                        <h3> After License Practice Support</h3>
+                        <div class="package-price">₹250 per class</div>
+                        <p>Master the road with confidence</p>
+                    </div>
+                    <div class="package-features">
+                        <ul>
+                            <li>Practice driving with your own car</li>
+                            <li>Class duration 1 Hours</li>
+                            <li>All weather condition driving</li>
+                            <li>Emergency handling</li>
+                            <li>Night driving techniques</li>
+                        </ul>
+                        <a href="#" class="package-button">Enroll Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Reviews Section -->
+    <section class="reviews-section">
+        <div class="container">
+            <h2 class="section-title">What Our Students Say</h2>
+            <div class="reviews-container">
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">TurboDrive Academy made learning to drive so easy! Their instructors are patient and knowledgeable. I passed my test on the first try!</p>
+                    <p class="review-author">- Nikita Sharma</p>
+                </div>
+                
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">The best driving school in town! The advanced package gave me confidence to handle any driving situation. Worth every penny!</p>
+                    <p class="review-author">- Neel Chaturvedi</p>
+                </div>
+                
+                <div class="review-card">
+                    <div class="stars">★★★★☆</div>
+                    <p class="review-text">Great experience overall. The weekend intensive course helped me get my license in just 3 weeks. Would recommend to anyone!</p>
+                    <p class="review-author">- Manish shah</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+    fetch('header.html')
+      .then(response => {
+        if (!response.ok) throw new Error('Network response was not ok');
+        return response.text();
+      })
+      .then(data => {
+        document.getElementById('header-placeholder').innerHTML = data;
+      })
+      .catch(error => {
+        console.error('Error loading header:', error);
+      });
+  </script>
+  
+    <!-- Footer -->
+    <div id="footer-container"></div>
+
+
+    <script>
+  fetch("footer.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("footer-container").innerHTML = data;
+    });
+</script>
+
+</body>
+</html>
